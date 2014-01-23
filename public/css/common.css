@@ -1,10 +1,13 @@
+body {
+	font-family: mplus-1p-thin,"ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif; background-color: transparent; color: #333; -webkit-font-smoothing: antialiased;
+}
 .navbar .nav>li>a.brand {
     padding-left:20px;
     margin-left:0
 }
 
 .content {
-    margin-top:70px;
+    /* margin-top:70px; */
     width:100%
 }
 
