@@ -1,9 +1,17 @@
 body {
 	font-family: mplus-1p-mid,"ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif; background-color: transparent; color: #333; -webkit-font-smoothing: antialiased;
 }
-.navbar .nav>li>a.brand {
+.navbar {
+	background: #f39c12;
+	color: #fff;
+	min-height: initial;
+}
+.navbar .nav>li>a.navbar-brand {
     padding-left:20px;
-    margin-left:0
+    margin-left:0;
+	color: #fff;
+	padding-top: 0px;
+	padding-bottom: 0px;
 }
 
 .content {

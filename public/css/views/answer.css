@@ -1,0 +1,24 @@
+#answer{
+	margin-top: 40px;
+}
+
+#answer .answers{
+	padding: 0 40px;
+	text-align: center;
+}
+#answer .answers .btn{
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+#answer .submit{
+	margin-top: 20px;
+}
+#answer .login-info{
+	margin-top: 40px;
+	padding: 0 20px;
+	text-align: right;
+}
+#answer .login-info span{
+	font-size: 12px;
+}
