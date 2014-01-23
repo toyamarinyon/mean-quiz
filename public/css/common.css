@@ -1,5 +1,5 @@
 body {
-	font-family: mplus-1p-thin,"ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif; background-color: transparent; color: #333; -webkit-font-smoothing: antialiased;
+	font-family: mplus-1p-mid,"ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif; background-color: transparent; color: #333; -webkit-font-smoothing: antialiased;
 }
 .navbar .nav>li>a.brand {
     padding-left:20px;
