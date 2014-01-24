@@ -101,3 +101,18 @@ exports.user = function(req, res, next, id) {
             next();
         });
 };
+
+/**
+ * Find guest user
+ */
+exports.guest = function(req, res) {
+    User
+        .findOne({
+            status: 'free'
+        })
+        .exec(function(err, user) {
+            if (err) return next(err);
+            if (!user) return next(new Error('Failed to load User ' + id));
+            req.json(user);
+        });
+};

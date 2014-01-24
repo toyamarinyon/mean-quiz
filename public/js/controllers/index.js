@@ -4,9 +4,10 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
     $scope.global = Global;
     $scope.guestLogin = function () {
         if ( ($window.mockWindow || $window).confirm('facebookログインすると、これからの記録をずっと残すことができます。\nそれでもゲストログインしますか？') ) {
-            $http.post('/users/session', {'name':'[ゲスト]アップル','password':'123456'})
+            var guest = $http.get('/users/guest');
+            $http.post('/users/session', {'email':guest.email,'password':'123456'})
                 .success(function () {
-                    ($window.mockWindow || $window).alert('ゲストでログインします。\n明日はfacebookでログインしてみてね。');
+                    ($window.mockWindow || $window).alert('ゲストでログインします。\n明日はfacebookログインしてみてね。');
                 })
                 .error(function () {
                 });
