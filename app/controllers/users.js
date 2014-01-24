@@ -116,3 +116,17 @@ exports.guest = function(req, res) {
             res.json(user);
         });
 };
+
+/**
+ * update_guest
+ */
+exports.update_guest = function(req, res) {
+    User.findOne({ _id: req.user._id})
+        .exec(function(err, user) {
+            if (err) return next(err);
+            if (!user) return next(new Error('Failed to load User ' + id));
+            user.status = "use";
+            User.save(user).exec(function (err, user) {
+            });
+        });
+};

@@ -6,6 +6,7 @@ var users = require('../controllers/users');
 module.exports = function(app, passport) {
     
     app.get('/guest', users.guest);
+    app.post('/guest/use', users.use_guest);
 
     app.get('/signin', users.signin);
     app.get('/signup', users.signup);
