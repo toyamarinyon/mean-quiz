@@ -120,7 +120,7 @@ exports.guest = function(req, res) {
 /**
  * update_guest
  */
-exports.update_guest = function(req, res) {
+exports.use_guest = function(req, res) {
     User.findOne({ _id: req.user._id})
         .exec(function(err, user) {
             if (err) return next(err);
