@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mean.system').controller('IndexController', ['$scope', 'Global', '$window', '$http', '$location', function ($scope, Global, $window, $http, $location) {
+angular.module('mean.system').controller('IndexController', ['$scope', 'Global', '$window', '$http', '$route', function ($scope, Global, $window, $http, $route) {
     $scope.global = Global;
     $scope.guestLogin = function () {
         if ( ($window.mockWindow || $window).confirm('facebookログインすると、これからの記録をずっと残すことができます。\nそれでもゲストログインしますか？') ) {
@@ -10,7 +10,8 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
                         .success(function () {
                             $http.post('/guest/use');
                             ($window.mockWindow || $window).alert('ゲストでログインします。\n明日はfacebookログインしてみてね。');
-                            $scope.$apply(function() { $location.path('/'); });
+                            $route.reload();
+                            
                         })
                         .error(function () {
                         });
