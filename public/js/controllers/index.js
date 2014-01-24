@@ -10,7 +10,7 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
                         .success(function () {
                             $http.post('/guest/use');
                             ($window.mockWindow || $window).alert('ゲストでログインします。\n明日はfacebookログインしてみてね。');
-                            $http.reload();
+                            $window.reload();
                         })
                         .error(function () {
                         });
