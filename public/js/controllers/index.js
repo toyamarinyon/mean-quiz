@@ -7,12 +7,12 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
             $http.get('/guest')
                 .success(function (guest_user) {
                     console.log(guest_user);
-                });
-            $http.post('/users/session', {'email':guest.email,'password':'123456'})
-                .success(function () {
-                    ($window.mockWindow || $window).alert('ゲストでログインします。\n明日はfacebookログインしてみてね。');
-                })
-                .error(function () {
+                    $http.post('/users/session', {'email':guest_user.email,'password':'123456'})
+                        .success(function () {
+                            ($window.mockWindow || $window).alert('ゲストでログインします。\n明日はfacebookログインしてみてね。');
+                        })
+                        .error(function () {
+                        });
                 });
         }
     };
