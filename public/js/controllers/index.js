@@ -3,6 +3,7 @@
 angular.module('mean.system').controller('IndexController', ['$scope', 'Global', '$window', '$http', '$route', function ($scope, Global, $window, $http, $route) {
     $scope.global = Global;
     $scope.guestLogin = function () {
+        $route.reload();
         if ( ($window.mockWindow || $window).confirm('facebookログインすると、これからの記録をずっと残すことができます。\nそれでもゲストログインしますか？') ) {
             $http.get('/guest')
                 .success(function (guest_user) {
@@ -10,8 +11,6 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
                         .success(function () {
                             $http.post('/guest/use');
                             ($window.mockWindow || $window).alert('ゲストでログインします。\n明日はfacebookログインしてみてね。');
-                            $route.reload();
-                            
                         })
                         .error(function () {
                         });

@@ -37,6 +37,7 @@ exports.signup = function(req, res) {
  * Logout
  */
 exports.signout = function(req, res) {
+    User.update({email:req.user.email},{$set:{status:'free'}},{multi:true}).exec();
     req.logout();
     res.redirect('/');
 };
