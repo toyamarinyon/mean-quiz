@@ -121,9 +121,5 @@ exports.guest = function(req, res) {
  * update_guest
  */
 exports.use_guest = function(req, res) {
-   conosle.log(req.user);
-   conosle.log(req.user._id);
-    User.update({ _id: req.user._id},{$set:{status: 'use'}},{upsert: false, multi: true},function (err) {
-       conosle.log(err);
-    });
+   User.update({email:req.user.email},{$set:{status:'use'}},{multi:true}).exec();
 };
