@@ -1,8 +1,8 @@
 'use strict';
 
+var port = process.env.PORT || 3000;
 module.exports = {
     db: "mongodb://localhost/mean-dev",
-	  port: process.env.PORT || 3000,
     app: {
         name: "MEAN - A Modern Stack - Development"
     },
