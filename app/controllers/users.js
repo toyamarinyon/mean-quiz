@@ -109,7 +109,8 @@ exports.user = function(req, res, next, id) {
 exports.guest = function(req, res) {
     User
         .findOne({
-            status: 'free'
+            status: 'free',
+            provider: 'local'
         })
         .exec(function(err, user) {
             if (err) return next(err);
