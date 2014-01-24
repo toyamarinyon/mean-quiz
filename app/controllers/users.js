@@ -121,13 +121,9 @@ exports.guest = function(req, res) {
  * update_guest
  */
 exports.use_guest = function(req, res) {
-    User.findOne({ _id: req.user._id})
-        .exec(function(err, user) {
-            if (err) return next(err);
-            if (!user) return next(new Error('Failed to load User ' + id));
-            user.status = "use";
-            user.save(function (err) {
-                console.log(err);
-            });
-        });
+   conosle.log(req.user);
+   conosle.log(req.user._id);
+    User.update({ _id: req.user._id},{$set:{status: 'use'}},upsert: false, multi: true},function (err) {
+       conosle.log(err);
+    });
 };
