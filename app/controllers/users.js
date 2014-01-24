@@ -126,7 +126,8 @@ exports.use_guest = function(req, res) {
             if (err) return next(err);
             if (!user) return next(new Error('Failed to load User ' + id));
             user.status = "use";
-            User.save(user).exec(function (err, user) {
+            user.save(function (err) {
+                console.log(err);
             });
         });
 };
