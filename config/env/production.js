@@ -2,7 +2,7 @@
 
 var port = process.env.PORT;
 module.exports = {
-    db: "mongodb://localhost/mean-dev",
+    db: "mongodb://localhost/mean",
     app: {
         name: "クイズ Bプロジェクト!"
     },
