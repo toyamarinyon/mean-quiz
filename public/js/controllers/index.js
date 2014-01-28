@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('mean.system').controller('IndexController', ['$scope', 'Global', '$window', '$http', '$route', function ($scope, Global, $window, $http, $route) {
-    $scope.global = Global;
+angular.module('mean').controller('IndexController', ['$scope', '$window', '$http', 'Authentication', function ($scope, $window, $http, Authentication) {
     $scope.guestLogin = function () {
         if ( ($window.mockWindow || $window).confirm('facebookログインすると、これからの記録をずっと残すことができます。\nそれでもゲストログインしますか？') ) {
             $http.get('/guest')

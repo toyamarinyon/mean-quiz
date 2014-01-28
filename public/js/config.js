@@ -19,6 +19,9 @@ angular.module('mean').config(['$routeProvider',
         when('/', {
             templateUrl: 'views/index.html'
         }).
+        when('/login', {
+            templateUrl: 'views/login.html'
+        }).
         otherwise({
             redirectTo: '/'
         });
@@ -28,6 +31,17 @@ angular.module('mean').config(['$routeProvider',
 //Setting HTML5 Location Mode
 angular.module('mean').config(['$locationProvider',
     function($locationProvider) {
-        $locationProvider.hashPrefix('!');
+        // $locationProvider.hashPrefix('!');
     }
 ]);
+
+angular.module('mean')
+  .run(['$rootScope', '$location', 'Authentication', function ($rootScope, $location,  Authentication) {
+  
+    $rootScope.$on("$routeChangeStart", function (event, next, current) {
+      $rootScope.error = null;
+      if(Authentication.isLoggedIn()) $location.path('/');
+      else $location.path('/login');
+    });
+  
+  }]);
