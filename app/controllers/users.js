@@ -14,6 +14,13 @@ exports.authCallback = function(req, res) {
 };
 
 /**
+ * is Logged in
+ */
+exports.isLoggedIn = function(req, res) {
+    res.json({result: req.user !== undefined});
+};
+
+/**
  * Show login form
  */
 exports.signin = function(req, res) {

@@ -39,9 +39,10 @@ angular.module('mean')
   .run(['$rootScope', '$location', 'Authentication', function ($rootScope, $location,  Authentication) {
   
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
-      $rootScope.error = null;
-      if(Authentication.isLoggedIn()) $location.path('/');
-      else $location.path('/login');
+      Authentication.isLoggedIn(
+        function(){$location.path('/');},
+        function(){$location.path('/login');}
+      );
     });
   
   }]);

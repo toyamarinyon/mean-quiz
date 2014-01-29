@@ -6,27 +6,17 @@ angular.module('mean.authentication')
     var currentUser = $cookieStore.get('user');
 
     return {
-      isLoggedIn: function() {
-        return ! currentUser === undefined
-      },
-
-      login: function(user, success, error) {
-        $http.post('/login', user)
-          .success(function(user){
-            $rootScope.user = user;
-            success(user);
-            })
-          .error(error);
-      },
-
-      logout: function(success, error) {
-        $http.post('/logout').success(function(){
-          $rootScope.user = {
-            username : '',
-            role : userRoles.public
-          };
-          success();
-        }).error(error);
-      }
+      isLoggedIn: function(login, logout, err) { 
+                    $http.get('/is_logged_in')
+                      .success(function(data, status, headers, option) {
+                        if ( data.result ) 
+                          login();
+                        else
+                          logout();
+                      })
+                      .error(function(data, status, headers, option) {
+                        err();
+                      })
+                  }
     };
   }]);
