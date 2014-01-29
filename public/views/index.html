@@ -1,20 +1,5 @@
 <section data-ng-controller="IndexController">
-	<section id="login" data-ng-hide="global.authenticated">
-		<header>
-			<h1>クイズ<br>Bプロジェクト!</h1>
-		</header>
-		<section class="form">
-			<div class="facebook">
-				<a href="/auth/facebook" class="btn btn-primary btn-lg btn-block"><i class="icon icon-facebook"></i>facebookログイン</a>
-			</div>
-			<div class="guest">
-				<a href="/" ng-click="guestLogin()">今日はゲストプレイにしておく</a>
-			</div>
-		</section>
-		<footer>
-		</footer>
-	</section>
-	<section id="answer" data-ng-show="global.authenticated">
+	<section id="answer">
 		<header></header>
 		<section class="answers">
 			<div class="btn-group btn-group-justified">

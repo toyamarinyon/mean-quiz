@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('mean').controller('IndexController', ['$scope', '$window', '$http', 'Authentication', function ($scope, $window, $http, Authentication) {
-    $scope.viewTransition = 'left';
+angular.module('mean').controller('LoginController', ['$scope', '$window', '$http', 'Authentication', function ($scope, $window, $http, Authentication) {
+    $scope.viewTransition = 'right';
     $scope.guestLogin = function () {
         if ( ($window.mockWindow || $window).confirm('facebookログインすると、これからの記録をずっと残すことができます。\nそれでもゲストログインしますか？') ) {
             $http.get('/guest')

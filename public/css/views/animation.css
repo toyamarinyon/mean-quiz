@@ -1,0 +1,48 @@
+.view.ng-enter,
+.view.ng-leave {
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  display: block;
+  width: 100%;
+  position: absolute;
+}
+
+.view.left.ng-enter {
+  background: #fff;
+  z-index: 100;
+  left: 100%;
+}
+
+.view.left.ng-enter.ng-enter-active {
+  left: 0;
+}
+
+.view.left.ng-leave {
+  left: 0;
+  z-index: 100;
+  background: #fff;
+}
+
+.view.left.ng-leave.ng-leave-active {
+  left: 100%;
+  z-index: 0;
+}
+
+.view.right.ng-enter {
+  left: 0;
+  z-index: 1;
+  background: #fff;
+}
+
+.view.right.ng-leave {
+  z-index: 1;
+}
+
+.view.right.ng-enter.ng-enter-active {
+  left: 0;
+}
+
+.view.right.ng-leave.ng-leave-active {
+  z-index: 0;
+}
+

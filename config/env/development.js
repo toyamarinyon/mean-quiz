@@ -9,7 +9,7 @@ module.exports = {
     facebook: {
         clientID: process.env.MEAN_QUIZ_FACEBOOK_CLIENT_ID || "APP_ID",
         clientSecret: process.env.MEAN_QUIZ_FACEBOOK_APP_SECRET || "APP_SECRET",
-        callbackURL: "http://localhost:"+port+"/auth/facebook/callback"
+        callbackURL: "http://test.i.jp:"+port+"/auth/facebook/callback"
     },
     twitter: {
         clientID: "CONSUMER_KEY",
@@ -27,3 +27,4 @@ module.exports = {
         callbackURL: "http://localhost:"+port+"/auth/google/callback"
     }
 }
+console.log('mongodb is ' + "mongodb://localhost/mean-dev");
