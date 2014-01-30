@@ -14,6 +14,7 @@ module.exports = function(app, passport) {
     app.get('/users/me', users.me);
 
     app.get('/is_logged_in', users.isLoggedIn);
+
     // Setting up the users api
     app.post('/users', users.create);
 
@@ -21,10 +22,7 @@ module.exports = function(app, passport) {
     app.param('userId', users.user);
 
     // Setting the local strategy route
-    app.post('/users/session', passport.authenticate('local', {
-        failureRedirect: '/signin',
-        failureFlash: true
-    }), users.session);
+    app.get('/guestlogin', users.guestlogin);
 
     // Setting the facebook oauth routes
     app.get('/auth/facebook', passport.authenticate('facebook', {

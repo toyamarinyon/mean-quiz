@@ -3,8 +3,7 @@
 module.exports = function(app) {
     
     // question route
-    var questions = require('../controllers/questions'),
-        kvs       = require('../controllers/kvs');
+    var questions = require('../controllers/questions');
     app.get('/question/:id', questions.q);
 
 };

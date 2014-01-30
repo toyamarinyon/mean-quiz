@@ -16,12 +16,13 @@ exports.set = function(req, res) {
       }
     });
     
-    var kvs = new KVS({key: req.params.key, value: req.prams:value});
+    var kvs = new KVS({key: req.params.key, value: req.params.value});
     kvs.save(function(error) {
       if ( error ) {
         return res.json({error:error});
       }
     });
+    return res.json({message:'complete!'});
 };
 
 /**
