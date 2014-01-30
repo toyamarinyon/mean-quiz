@@ -76,3 +76,23 @@
 	bottom:0;
 	right:20px;
 }
+#home .questions:after {
+	content: '.';
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+#home .controllpanel {
+	font-family: mplus-1p-mid,"ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
+	margin-top: 20px;
+	text-align: right;
+}
+#home .controllpanel a {
+	margin-left: 1em;
+	color: #fff;
+}
+#home .controllpanel a:hover {
+	color: #fff;
+}
