@@ -1,6 +1,6 @@
 .view.ng-enter,
 .view.ng-leave {
-  transition-duration: 0.5s;
+  transition-duration: 0.25s;
   transition-timing-function: linear;
   display: block;
   width: 100%;
