@@ -7,6 +7,7 @@
         "angular-cookies": "latest",
         "angular-mocks": "latest",
         "angular-route": "latest",
+        "angular-animate": "latest",
         "bootstrap": "3.0.3",
         "font-awesome": "3.0.0",
         "angular-bootstrap": "0.10.0",

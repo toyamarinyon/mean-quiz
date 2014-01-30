@@ -17,10 +17,12 @@ angular.module('mean').config(['$routeProvider',
             templateUrl: 'views/articles/view.html'
         }).
         when('/', {
-            templateUrl: 'views/index.html'
+            templateUrl: 'views/index.html',
+            controller: 'IndexController'
         }).
         when('/login', {
-            templateUrl: 'views/login.html'
+            templateUrl: 'views/login.html',
+            controller: 'LoginController'
         }).
         otherwise({
             redirectTo: '/'
