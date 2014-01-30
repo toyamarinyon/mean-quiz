@@ -26,7 +26,7 @@ exports.isLoggedIn = function(req, res) {
 exports.logout = function(req, res) {
     User.update(
       {provider:'guest', name:req.user.name},
-      {$set: {guest: {state: 'free'}},
+      {$set: {guest: {state: 'free'}}},
       {multi:true}
     ).exec();
     req.logout();

@@ -5,21 +5,9 @@ var users = require('../controllers/users');
 
 module.exports = function(app, passport) {
     
-    app.get('/guest', users.guest);
-    app.post('/guest/use', users.use_guest);
-
-    app.get('/signin', users.signin);
-    app.get('/signup', users.signup);
     app.get('/logout', users.logout);
-    app.get('/users/me', users.me);
 
     app.get('/is_logged_in', users.isLoggedIn);
-
-    // Setting up the users api
-    app.post('/users', users.create);
-
-    // Setting up the userId param
-    app.param('userId', users.user);
 
     // Setting the local strategy route
     app.get('/guestlogin', users.guestlogin);
@@ -29,7 +17,7 @@ module.exports = function(app, passport) {
         scope: ['email', 'user_about_me'],
         locale: 'ja_JP',
         failureRedirect: '/'
-    }), users.signin);
+    }));
 
     app.get('/auth/facebook/callback', passport.authenticate('facebook', {
         failureRedirect: '/'
