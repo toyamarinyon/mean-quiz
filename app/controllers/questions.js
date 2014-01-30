@@ -12,11 +12,11 @@ var mongoose = require('mongoose'),
 exports.q = function(req, res) {
     Question
         .findOne({
-            no: req.param.id
+            no: req.params.id
         })
         .exec(function(err, question) {
-            if (err) return res.json({'error':err});
-            if (!question) return res.json({'Failed to load Question ' + req.param.id}));
+            if (err) return res.json({error:err});
+            if (!question) return res.json({message:'Failed to load Question ' + req.params.id});
             res.json(question);
         });
 };
