@@ -1,10 +1,14 @@
 'use strict';
 
 angular.module('mean').controller('LoginController', ['$scope', '$window', '$http', '$location', 'Authentication', function ($scope, $window, $http, $location, Authentication) {
-  Authentication.isLoggedIn(
-    function(){$location.path('/');},
-    function(){$location.path('/login');}
-  );
+  Authentication.
+    when('login', function() {
+      $location.path('/');
+    }).
+    when('logout', function() {
+      $location.path('/login');
+    }).
+    run();
   $scope.viewTransition = 'right';
   $scope.guestLogin = function () {
       if ( ($window.mockWindow || $window).confirm('facebookログインすると、これからの記録をずっと残すことができます。\nそれでもゲストログインしますか？') ) {

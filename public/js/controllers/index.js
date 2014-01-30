@@ -1,12 +1,16 @@
 'use strict';
 
 angular.module('mean').controller('IndexController', ['$scope', '$window', '$http', '$location', 'Authentication', function ($scope, $window, $http, $location, Authentication) {
-  Authentication.isLoggedIn(
-    function(){},
-    function(){$location.path('/login');}
-  );
+  Authentication.
+    when('login', function(loginUser) {
+      $scope.user = loginUser;
+    }).
+    when('logout', function() {
+      $location.path('/login');
+    }).
+    run();
+  
   $scope.viewTransition = 'left';
-  $scope.user = Authentication.loginUser;
   $scope.logout = function() {
     $http.get('/logout')
       .success(function(){
