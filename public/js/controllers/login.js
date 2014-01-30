@@ -11,7 +11,7 @@ angular.module('mean').controller('LoginController', ['$scope', '$window', '$htt
     run();
   $scope.viewTransition = 'leaveright';
   console.log($rootScope.viewEvent);
-  if ( $rootScope.viewEvent == 'login' ) {
+  if ( $rootScope.viewEvent == 'logout' ) {
     $scope.viewTransition += ' enterright';
   }
   $scope.guestLogin = function () {
