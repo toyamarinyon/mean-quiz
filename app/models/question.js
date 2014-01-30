@@ -15,7 +15,7 @@ var QuestionSchema = new Schema({
       unique: true,
       index: true
     },
-    choices: {}
+    choices: {},
     no: Number,
     answer: Number,
     created_at: Date
