@@ -8,13 +8,13 @@
 						{{choice.no}}.{{choice.label}}
 					</header>
 					<section class="choicer" id="choicer{{choice.no}}">
-						{{choicer.no}}
+						{{choicer[no]}}
 					</section>
 				</li>
 			</ul>
 		</section>
 		<section class="controllpanel">
-			<a href="">みなさんの回答を確認</a>
+			<a href="" ng-click="confirm()">みなさんの回答を確認</a>
 			<a href="">正解発表</a>
 		</section>
 		<footer></footer>
