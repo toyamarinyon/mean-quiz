@@ -17,7 +17,7 @@ exports.authCallback = function(req, res) {
  * is Logged in
  */
 exports.isLoggedIn = function(req, res) {
-    res.json({result: req.user !== undefined});
+    res.json({result: req.user !== undefined, loginUser: req.user});
 };
 
 /**
@@ -43,10 +43,10 @@ exports.signup = function(req, res) {
 /**
  * Logout
  */
-exports.signout = function(req, res) {
-    User.update({email:req.user.email},{$set:{status:'free'}},{multi:true}).exec();
+exports.logout = function(req, res) {
+    User.update({provider:'guest', name:req.user.name},{$set:{status:'free'}},{multi:true}).exec();
     req.logout();
-    res.redirect('/');
+    res.json({message: 'logout success!'});
 };
 
 /**

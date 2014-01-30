@@ -10,7 +10,7 @@ module.exports = function(app, passport) {
 
     app.get('/signin', users.signin);
     app.get('/signup', users.signup);
-    app.get('/signout', users.signout);
+    app.get('/logout', users.logout);
     app.get('/users/me', users.me);
 
     app.get('/is_logged_in', users.isLoggedIn);
