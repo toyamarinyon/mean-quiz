@@ -13,10 +13,11 @@ angular.module('mean').controller('IndexController', ['$scope', '$window', '$htt
   $scope.viewTransition = 'enterleft leaveleft';
   $scope.logout = function() {
     $http.get('/logout')
-      .success(function(){
+      .success(function(data) {
+        $scope.$broadcast('logout', data);
         $location.path('/login');
       })
-      .error(function(){
+      .error(function() {
       });
   };
 }]);
