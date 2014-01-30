@@ -10,8 +10,7 @@ angular.module('mean').controller('IndexController', ['$scope', '$window', '$htt
     }).
     run();
   
-  $scope.enterTransition = 'enterleft';
-  $scope.leaveTransition = 'leaveleft';
+  $scope.viewTransition = 'enterleft leaveleft';
   $scope.logout = function() {
     $http.get('/logout')
       .success(function(){

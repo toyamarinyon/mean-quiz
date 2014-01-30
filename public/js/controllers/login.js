@@ -9,8 +9,7 @@ angular.module('mean').controller('LoginController', ['$scope', '$window', '$htt
       $location.path('/login');
     }).
     run();
-  $scope.enterTransition = 'enterright';
-  $scope.leaveTransition = 'leaveright';
+  $scope.viewTransition = 'enterright leaveleft';
   $scope.guestLogin = function () {
       if ( ($window.mockWindow || $window).confirm('facebookログインすると、これからの記録をずっと残すことができます。\nそれでもゲストログインしますか？') ) {
           $http.get('/guest')
