@@ -15,14 +15,12 @@ var UserSchema = new Schema({
       unique: true,
       index: true
     },
-    email: String,
     provider: String,
-    state: String,
     facebook: {},
     twitter: {},
     github: {},
     google: {},
-    gurst: {},
+    guest: {},
     created_at: Date
 });
 

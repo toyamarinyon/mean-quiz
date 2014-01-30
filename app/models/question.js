@@ -17,7 +17,7 @@ var QuestionSchema = new Schema({
     },
     choices: {}
     no: Number,
-    Answer: Number,
+    answer: Number,
     created_at: Date
 });
 
