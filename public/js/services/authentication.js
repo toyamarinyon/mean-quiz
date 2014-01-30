@@ -9,11 +9,13 @@ angular.module('mean.authentication')
       isLoggedIn: function(login, logout, err) { 
                     $http.get('/is_logged_in')
                       .success(function(data, status, headers, option) {
-                        if ( data.result ) 
+                        if ( data.result ) {
                           loginUser = data.loginUser;
                           login();
-                        else
+                        }
+                        else {
                           logout();
+                        }
                       })
                       .error(function(data, status, headers, option) {
                         err();
