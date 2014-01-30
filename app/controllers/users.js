@@ -10,7 +10,14 @@ var mongoose = require('mongoose'),
  * Auth callback
  */
 exports.authCallback = function(req, res) {
-    res.redirect('/');
+    res.redirect('/#/login');
+};
+
+/**
+ * is Logged in
+ */
+exports.isLoggedIn = function(req, res) {
+    res.json({result: req.user !== undefined});
 };
 
 /**

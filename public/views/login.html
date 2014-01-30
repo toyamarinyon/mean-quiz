@@ -1,5 +1,5 @@
-<section data-ng-controller="IndexController">
-	<section id="login" data-ng-hide="global.authenticated">
+<section ng-controller="LoginController">
+	<section id="login">
 		<header>
 			<h1>クイズ<br>Bプロジェクト!</h1>
 		</header>
@@ -13,25 +13,5 @@
 		</section>
 		<footer>
 		</footer>
-	</section>
-	<section id="answer" data-ng-show="global.authenticated">
-		<header></header>
-		<section class="answers">
-			<div class="btn-group btn-group-justified">
-				<a class="btn btn-default" role="button">1</a>
-				<a class="btn btn-default" role="button">2</a>
-				<a class="btn btn-default" role="button">3</a>
-				<a class="btn btn-default" role="button">4</a>
-			</div>
-			<div class="submit">
-				<button type="button" class="btn btn-primary">回答を送信</button>
-			</div>
-		</section>
-		<section class="login-info">
-			<a href="/signout">ログアウト</a><br>
-			<span>({{global.user.name}}さん でログイン中)</span>
-            
-		</section>
-		<footer></footer>
 	</section>
 </section>
