@@ -34,15 +34,3 @@ angular.module('mean').config(['$locationProvider',
         // $locationProvider.hashPrefix('!');
     }
 ]);
-
-angular.module('mean')
-  .run(['$rootScope', '$location', 'Authentication', function ($rootScope, $location,  Authentication) {
-  
-    $rootScope.$on("$routeChangeStart", function (event, next, current) {
-      Authentication.isLoggedIn(
-        function(){$location.path('/');},
-        function(){$location.path('/login');}
-      );
-    });
-  
-  }]);
