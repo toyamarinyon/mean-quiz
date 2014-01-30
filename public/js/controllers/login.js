@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mean').controller('IndexController', ['$scope', '$window', '$http', '$location', '$rootScope', 'Authentication', function ($scope, $window, $http, $location, $rootScope, Authentication) {
+angular.module('mean').controller('LoginController', ['$scope', '$window', '$http', '$location', '$rootScope', 'Authentication', function ($scope, $window, $http, $location, $rootScope, Authentication) {
   Authentication.
     when('login', function() {
       $location.path('/');
@@ -10,6 +10,7 @@ angular.module('mean').controller('IndexController', ['$scope', '$window', '$htt
     }).
     run();
   $scope.viewTransition = 'leaveright';
+  console.log($rootScope.viewEvent);
   if ( $rootScope.viewEvent == 'login' ) {
     $scope.viewTransition += ' enterright';
   }

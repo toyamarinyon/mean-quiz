@@ -14,7 +14,9 @@ angular.module('mean').controller('IndexController', ['$scope', '$window', '$htt
   $scope.logout = function() {
     $http.get('/logout')
       .success(function(data) {
+        console.log($rootScope.viewEvent);
         $rootScope.viewEvent = 'logout';
+        console.log($rootScope.viewEvent);
         $location.path('/login');
       })
       .error(function() {
