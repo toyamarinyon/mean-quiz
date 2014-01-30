@@ -21,7 +21,6 @@ angular.module('mean.authentication')
                         err();
                       })
                   },
-      loginUser: loginUser;
-
+      loginUser: loginUser
     };
   }]);
