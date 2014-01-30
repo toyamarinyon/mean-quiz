@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mean').controller('IndexController', ['$scope', '$window', '$http', '$location', 'Authentication', function ($scope, $window, $http, $location, Authentication) {
+angular.module('mean').controller('IndexController', ['$scope', '$window', '$http', '$location', '$rootScope', 'Authentication', function ($scope, $window, $http, $location, $rootScope, Authentication) {
   Authentication.
     when('login', function(loginUser) {
       $scope.user = loginUser;
@@ -14,7 +14,7 @@ angular.module('mean').controller('IndexController', ['$scope', '$window', '$htt
   $scope.logout = function() {
     $http.get('/logout')
       .success(function(data) {
-        $scope.$broadcast('logout', data);
+        $rootScope.viewEvent = 'logout';
         $location.path('/login');
       })
       .error(function() {

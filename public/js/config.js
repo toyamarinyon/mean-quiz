@@ -23,4 +23,7 @@ angular.module('mean').config(['$locationProvider',
     function($locationProvider) {
         // $locationProvider.hashPrefix('!');
     }
-]);
+]).
+run(['$rootScope', function($rootScope) {
+  $rootScope.viewEvent = '';
+}]);
