@@ -12,6 +12,10 @@ angular.module('mean').config(['$routeProvider',
             templateUrl: 'views/login.html',
             controller: 'LoginController'
         }).
+        when('/question/:questionNo', {
+            templateUrl: 'views/question.html',
+            controller: 'QuestionController'
+        }).
         otherwise({
             redirectTo: '/'
         });
