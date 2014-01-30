@@ -10,13 +10,13 @@
 		<header></header>
 		<section class="answers">
 			<div class="btn-group btn-group-justified">
-				<a class="btn btn-default" role="button">1</a>
-				<a class="btn btn-default" role="button">2</a>
-				<a class="btn btn-default" role="button">3</a>
-				<a class="btn btn-default" role="button">4</a>
+				<a class="btn btn-warning" ng-model="answerNo" btn-radio="1">1</a>
+				<a class="btn btn-warning" ng-model="answerNo" btn-radio="2">2</a>
+				<a class="btn btn-warning" ng-model="answerNo" btn-radio="3">3</a>
+				<a class="btn btn-warning" ng-model="answerNo" btn-radio="4">4</a>
 			</div>
 			<div class="submit">
-				<button type="button" class="btn btn-primary">回答を送信</button>
+				<button type="button" class="btn btn-primary btn-lg" ng-click="sendAnswer()">回答を送信</button>
 			</div>
 		</section>
 		<section class="login-info">

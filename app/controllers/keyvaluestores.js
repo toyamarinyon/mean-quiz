@@ -9,33 +9,34 @@ var mongoose = require('mongoose'),
 /**
  * setter
  */
-exports.set = function(req, res) {
-    KVS.remove({key: req.params.key}, function(error) {
+exports.set = function(key, value, next) {
+    KVS.remove({key: key}, function(error) {
       if ( error ) {
-        return res.json({error:error});
+        // return res.json({error:error});
       }
     });
     
-    var kvs = new KVS({key: req.params.key, value: req.params.value});
+    var kvs = new KVS({key: key, value: value});
     kvs.save(function(error) {
       if ( error ) {
-        return res.json({error:error});
+        // return res.json({error:error});
       }
     });
-    return res.json({message:'complete!'});
+    next();
+    // return res.json({message:'complete!'});
 };
 
 /**
  * getter
  */
-exports.get = function(req, res) {
-  KVS.findOne({key: req.params.key}, function(error, value) {
+exports.get = function(key, next) {
+  KVS.findOne({key: key}, function(error, value) {
     if ( error ) {
-      return res.json({error: error});
+      next({error: error});
     }
     if ( !value ) {
-      return res.json({message: 'kvs not found ' + req.params.key});
+      next({message: 'kvs not found ' + req.params.key});
     }
-    return res.json({value: value});
+    next(value.value);
   });
 };

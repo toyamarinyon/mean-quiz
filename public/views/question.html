@@ -1,9 +1,16 @@
-<section>
+<section id="homeset">
 	<section id="home">
-		<header></header>
-		<section class="">
-			<ul ng-repeat="choice in question.choices">
-				<li>{{choice.no}} {{choice.label}}</li>
+		<header id="qt">Q{{question.no}}. {{question.title}}</header>
+		<section class="questions">
+			<ul>
+				<li ng-repeat="choice in question.choices">
+					<header>
+						{{choice.no}}.{{choice.label}}
+					</header>
+					<section class="choicer" id="choicer{{choice.no}}">
+						{{choicer.no}}
+					</section>
+				</li>
 			</ul>
 		</section>
 		<footer></footer>

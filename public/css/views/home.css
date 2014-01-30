@@ -1,0 +1,78 @@
+#homeset{
+	height: 800px;
+	background: #f39c12;
+}
+#home{
+	margin: 0 auto;
+	width: 800px;
+	padding: 50px;
+	font-family: mplus-1p-thin,"ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+#home header h1{
+	font-family: mplus-1p-thin,"ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
+	margin-top: 0px;
+	font-size: 40px;
+	color: #fff;
+	font-weight: normal;
+	text-align: left;
+	line-height: 1.4em;
+}
+
+#home .start {
+	margin-top: 90px;
+	padding: 20px;
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+}
+#home .start a {
+	font-family: mplus-1p-mid,"ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
+	color: #fff;
+	border: 1px solid #fff;
+	padding : 10px;
+}
+#home .start a:hover {
+	text-decoration: none;
+}
+#home .qq{
+	text-align: center;
+	margin-top: 90px;
+	font-size: 120px;
+	color: #fff;
+}
+#home .qq a{
+	color: #fff;
+}
+#home .qq a:hover{
+	text-decoration: none;
+}
+
+#qt {
+	color: #fff;
+	font-size: 20px;
+	font-family: mplus-1p-mid,"ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
+	margin-bottom: 20px;
+}
+
+#home .questions ul {
+	width:100%;
+}
+#home .questions ul li {
+	width:50%;
+	font-size: 30px;
+	font-family: mplus-1p-mid,"ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
+	color: #fff;
+	list-style: none;
+	border: solid 1px #fff;
+	float: left;
+    box-sizing:  border-box;
+    position: relative;
+	padding: 40px;
+}
+#home .questions ul li .choicer{
+	text-align: right;
+	position: absolute;
+	bottom:0;
+	right:20px;
+}

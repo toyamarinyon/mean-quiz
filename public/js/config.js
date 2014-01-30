@@ -16,6 +16,14 @@ angular.module('mean').config(['$routeProvider',
             templateUrl: 'views/question.html',
             controller: 'QuestionController'
         }).
+        when('/q/:questionNo', {
+            templateUrl: 'views/q.html',
+            controller: 'QController'
+        }).
+        when('/home', {
+            templateUrl: 'views/home.html',
+            controller: 'HomeController'
+        }).
         otherwise({
             redirectTo: '/'
         });

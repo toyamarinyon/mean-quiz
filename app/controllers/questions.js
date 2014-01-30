@@ -17,6 +17,6 @@ exports.q = function(req, res) {
         .exec(function(err, question) {
             if (err) return res.json({error:err});
             if (!question) return res.json({message:'Failed to load Question ' + req.params.id});
-            res.json(question);
+            return res.json(question);
         });
 };
