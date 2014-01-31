@@ -13,10 +13,15 @@ var mongoose = require('mongoose'),
 exports.a = function(req, res) {
 
   KVS.get('current_q_no', function(q_no) {
+    Answer.remove({
+      q_no: q_no,
+      answer_name: req.user.name,
+      a_no: req.params.answerNo
+    });
     var answer = new Answer({
       q_no: q_no,
       answer_name: req.user.name,
-      a_no: req.params.answerNo,
+      a_no: req.params.answerNo
     });
 
     answer.save();
@@ -30,11 +35,12 @@ exports.a = function(req, res) {
  */
 exports.q = function(req, res) {
 
+  console.log(req.questionNo);
   Answer.find(
     {q_no:req.questionNo},
     function(err, answers) {
       if (err) {return res.json({err:err});}
-      if (!answers) {return res.json({});
+      if (!answers) {return res.json({})};
       return res.json(answers);
     });
 
