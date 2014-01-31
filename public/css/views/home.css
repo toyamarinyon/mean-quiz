@@ -4,7 +4,7 @@
 }
 #home{
 	margin: 0 auto;
-	width: 800px;
+	width: 900px;
 	padding: 50px;
 	font-family: mplus-1p-thin,"ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -69,6 +69,10 @@
     box-sizing:  border-box;
     position: relative;
 	padding: 40px;
+}
+#home .questions ul li.true {
+	background: #f00;
+
 }
 #home .questions ul li .choicer{
 	text-align: right;
