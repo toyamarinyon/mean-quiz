@@ -7,7 +7,7 @@ if [ ${NODE_ENV:-undefined} != 'production' ] ; then
 fi
 
 # remove all collections
-mongo localhost:27017/${database} ./config/migration/remove.js
+mongo localhost:27017/${database} ./config/migration/drop.js
 
 # load default data
 mongoimport -d ${database} -c users -type json ./config/migration/guestusers.json
