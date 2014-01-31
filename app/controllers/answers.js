@@ -13,6 +13,9 @@ var mongoose = require('mongoose'),
 exports.a = function(req, res) {
 
   KVS.get('current_q_no', function(q_no) {
+    console.log(q_no);
+    console.log(req.user.name);
+
     Answer.remove({
       q_no: q_no,
       answer_name: req.user.name
