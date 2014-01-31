@@ -4,6 +4,7 @@ angular.module('mean').controller('QController', ['$scope', '$window', '$http', 
   $scope.title = 'Q' + $routeParams.questionNo;
   $scope.qn = $routeParams.questionNo;
 }]);
+
 angular.module('mean').controller('QuestionController', ['$scope', '$window', '$http', '$location', '$routeParams', function ($scope, $window, $http, $location, $routeParams) {
   $http.get('/question/'+$routeParams.questionNo)
     .success(function(data) {
@@ -18,11 +19,18 @@ angular.module('mean').controller('QuestionController', ['$scope', '$window', '$
       .success(function(data) {
         var tmp = [0,0,0,0,0];
         for ( var i=0; i<data.length; i++ ) {
-          tmp[data[i].id] = data[i].count;
+          tmp[data[i]._id] = data[i].count;
         }
         $scope.choicer = tmp;
       })
       .error(function() {
       });
+  }
+  $scope.right = function() {
+    var answer_no = $scope.question.a_no;
+    for ( var i=1; i<5; i++ ) {
+      if ( i == $scope.question.a_no ) { continue;}
+      $scope.['choiceClass'+i] = 'false';
+    }
   }
 }]);

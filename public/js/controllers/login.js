@@ -20,7 +20,6 @@ angular.module('mean').controller('LoginController', ['$scope', '$window', '$htt
     if ( ($window.mockWindow || $window).confirm('facebookログインすると、これからの記録をずっと残すことができます。\nそれでもゲストログインしますか？') ) {
       $http.get('/guestlogin')
       .success(function(guest_user) {
-        ($window.mockWindow || $window).alert('ゲストでログインします。\n明日はfacebookログインしてみてね。');
         $location.path('/');
       })
       .error(function() {

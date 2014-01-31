@@ -3,7 +3,7 @@
 		<header id="qt">Q{{question.no}}. {{question.title}}</header>
 		<section class="questions">
 			<ul>
-				<li ng-repeat="choice in question.choices">
+				<li ng-repeat="choice in question.choices" ng-class="choiceClass{{choice.no}}">
 					<header>
 						{{choice.no}}.{{choice.label}}
 					</header>
@@ -15,7 +15,7 @@
 		</section>
 		<section class="controllpanel">
 			<a href="" ng-click="confirm()">みなさんの回答を確認</a>
-			<a href="">正解発表</a>
+			<a href="" ng-click="right()">正解発表</a>
 		</section>
 		<footer></footer>
 	</section>
