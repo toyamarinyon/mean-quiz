@@ -14,7 +14,11 @@ angular.module('mean').controller('QuestionController', ['$scope', '$window', '$
 
   $scope.choicer = [];
   $scope.confirm = function() {
-    $http.get('/answer/'
+    $http.get('/answer/'+$routeParams.questionNo)
+      .success(function(data) {
+      })
+      .error(function() {
+      });
     for ( var i=1; i<5; i++ ) {
       $scope.choicer[i] = 2;
     }

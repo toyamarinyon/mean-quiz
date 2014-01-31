@@ -36,9 +36,10 @@ exports.a = function(req, res) {
  */
 exports.q = function(req, res) {
 
-  Answer.find(
-    {q_no:req.params.questionNo},
-    function(err, answers) {
+  Answer.aggregate(
+    {$match: {q_no: req.params.questionNo}},
+    {$group: {_id: '$a_no', count: {'$sum':1}}}
+  ).exec(function(err, answers) {
       if (err) {return res.json({err:err});}
       if (!answers) {return res.json({})};
       return res.json(answers);
