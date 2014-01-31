@@ -26,7 +26,7 @@ exports.a = function(req, res) {
 
       answer.save();
 
-      return res.json({message: 'complete', data:answer});
+      return res.json({message: 'complete', answer:answer});
     });
   });
 };

@@ -18,7 +18,7 @@ angular.module('mean').controller('IndexController', ['$scope', '$window', '$htt
   $scope.sendAnswer = function() {
     $http.get('/answer/send/' + $scope.answerNo)
       .success(function(data) {
-        alert('Q'+data.q_no+'の回答に'+data.a_no+'を選択しました。');
+        alert('Q'+data.answer.q_no+'の回答に'+data.answer.a_no+'を選択しました。');
       })
       .error(function() {
       });
