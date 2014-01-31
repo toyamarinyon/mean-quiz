@@ -35,9 +35,9 @@ exports.a = function(req, res) {
  */
 exports.q = function(req, res) {
 
-  console.log(req.questionNo);
+  console.log(req.params.questionNo);
   Answer.find(
-    {q_no:req.questionNo},
+    {q_no:req.params.questionNo},
     function(err, answers) {
       if (err) {return res.json({err:err});}
       if (!answers) {return res.json({})};
