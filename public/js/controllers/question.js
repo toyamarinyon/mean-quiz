@@ -27,10 +27,9 @@ angular.module('mean').controller('QuestionController', ['$scope', '$window', '$
       });
   }
   $scope.right = function() {
-    var answer_no = $scope.question.a_no;
     for ( var i=1; i<5; i++ ) {
-      if ( i == $scope.question.a_no ) { continue;}
-      $scope.['choiceClass'+i] = 'false';
+      if ( i == $scope.question.answer ) { continue;}
+      $scope['choiceClass'+i] = 'false';
     }
   }
 }]);
