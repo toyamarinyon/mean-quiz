@@ -13,22 +13,21 @@ var mongoose = require('mongoose'),
 exports.a = function(req, res) {
 
   KVS.get('current_q_no', function(q_no) {
-    console.log(q_no);
-    console.log(req.user.name);
 
     Answer.remove({
       q_no: q_no,
       answer_name: req.user.name
-    });
-    var answer = new Answer({
-      q_no: q_no,
-      answer_name: req.user.name,
-      a_no: req.params.answerNo
-    });
+    }, function(err) {
+      var answer = new Answer({
+        q_no: q_no,
+        answer_name: req.user.name,
+        a_no: req.params.answerNo
+      });
 
-    answer.save();
+      answer.save();
 
-    return res.json({message: 'complete', data:answer});
+      return res.json({message: 'complete', data:answer});
+    });
   });
 };
 
