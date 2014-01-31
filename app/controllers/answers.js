@@ -24,3 +24,18 @@ exports.a = function(req, res) {
     return res.json({message: 'complete', data:answer});
   });
 };
+
+/**
+ * Fetch answer
+ */
+exports.q = function(req, res) {
+
+  Answer.find(
+    {q_no:req.questionNo},
+    function(err, answers) {
+      if (err) {return res.json({err:err});}
+      if (!answers) {return res.json({});
+      return res.json(answers);
+    });
+
+};
