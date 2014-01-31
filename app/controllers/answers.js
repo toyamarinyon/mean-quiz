@@ -15,8 +15,7 @@ exports.a = function(req, res) {
   KVS.get('current_q_no', function(q_no) {
     Answer.remove({
       q_no: q_no,
-      answer_name: req.user.name,
-      a_no: req.params.answerNo
+      answer_name: req.user.name
     });
     var answer = new Answer({
       q_no: q_no,
