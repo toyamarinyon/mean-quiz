@@ -12,6 +12,7 @@ angular.module('mean').controller('QuestionController', ['$scope', '$window', '$
     .error(function() {
     });
 
+  $scope.choicer = [];
   $scope.confirm = function() {
     for ( var i=1; i<5; i++ ) {
       $scope.choicer[i] = 2;
