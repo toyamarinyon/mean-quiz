@@ -9,10 +9,30 @@
 	font-family: mplus-1p-thin,"ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
 	-webkit-font-smoothing: antialiased;
 }
+#home header {
+	margin: 0 auto;
+	width: 700px;
+}
+#home header h2{
+	font-family: mplus-1p-mid,"ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
+	font-size: 20px;
+	color: #fff;
+	font-weight: normal;
+	text-align: left;
+	line-height: 1.4em;
+}
 #home header h1{
 	font-family: mplus-1p-thin,"ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
 	margin-top: 0px;
-	font-size: 40px;
+	font-size: 60px;
+	color: #fff;
+	font-weight: normal;
+	text-align: left;
+	line-height: 1.2em;
+}
+#home header h2{
+	font-family: mplus-1p-mid,"ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
+	font-size: 20px;
 	color: #fff;
 	font-weight: normal;
 	text-align: left;
