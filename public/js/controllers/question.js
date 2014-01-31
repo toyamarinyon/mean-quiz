@@ -16,11 +16,13 @@ angular.module('mean').controller('QuestionController', ['$scope', '$window', '$
   $scope.confirm = function() {
     $http.get('/answer/'+$routeParams.questionNo)
       .success(function(data) {
+        var tmp = [0,0,0,0,0];
+        for ( var i=0; i<data.length; i++ ) {
+          tmp[data[i].id] = data[i].count;
+        }
+        $scope.choicer = tmp;
       })
       .error(function() {
       });
-    for ( var i=1; i<5; i++ ) {
-      $scope.choicer[i] = 2;
-    }
   }
 }]);
